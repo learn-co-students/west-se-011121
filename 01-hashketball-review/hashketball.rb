@@ -197,7 +197,7 @@ def game_hash
           points: 12,
           rebounds: 4,
           assists: 7,
-          steals: 22,
+          steals: 7,
           blocks: 15,
           slam_dunks: 10
         }, {
@@ -227,7 +227,7 @@ def game_hash
           points: 6,
           rebounds: 12,
           assists: 12,
-          steals: 7,
+          steals: 22,
           blocks: 5,
           slam_dunks: 12
         }
@@ -241,15 +241,20 @@ def num_points_scored(player_name)
   players = get_players
   # find the player whose name matches the argument 'player_name'
   # binding.pry
+  
   # players.each do |player|
   #   if player[:player_name] == player_name
   #     return player[:points]
   #   end
   # end
+
+  # we can refactor the #each block above to use #find instead
   # found = players.find do |player|
   #   player[:player_name] == player_name
   # end
+
   # return that player's points
+  # we can abstract the players.find logic into the helper method #find_player
   find_player(players, player_name)[:points]
 end
 
@@ -280,8 +285,12 @@ def player_numbers(team)
   my_team[:players].map {|player| player[:number]}
 end
 
-def player_stats
+def player_stats(player_name)
   # this method works much better with the older version of the game hash
+  players = get_players
+  player = find_player(players, player_name)
+  player.delete(:player_name)
+  player
 end
 
 # **********************
@@ -330,21 +339,21 @@ end
 # EXERCISE:
 # Define a method called get_names that takes an array of instructors
 # and returns just their names.
-instructors = [
-  {name: 'Alex', hometown: 'upstate ny', mood: 'excited'},
-  {name: 'rachel', hometown: 'maine'},
-  {name: 'maxwell', hometwon: 'brookyln'}
-]
+# instructors = [
+#   {name: 'Alex', hometown: 'upstate ny', mood: 'excited'},
+#   {name: 'rachel', hometown: 'maine'},
+#   {name: 'maxwell', hometwon: 'brookyln'}
+# ]
 
-def get_names(instructors)
-  names = []
- instructors.each do |hash|
-    names << hash[:name]
-  end
-  names
-end
+# def get_names(instructors)
+#   names = []
+#  instructors.each do |hash|
+#     names << hash[:name]
+#   end
+#   names
+# end
 
-puts get_names(instructors)
+# puts get_names(instructors)
 
 
 
