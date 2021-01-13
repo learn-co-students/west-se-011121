@@ -1,3 +1,4 @@
+require 'pry'
 # ===============
 # Procedural Ruby
 # ================
@@ -121,5 +122,6 @@ end
 puts find_account(1)
 puts low_balance.inspect
 
-
+# we could run all of the above implentation code in Pry as well (to exit Pry, just type 'exit')
+binding.pry
 
