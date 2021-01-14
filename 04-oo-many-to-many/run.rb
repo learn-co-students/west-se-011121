@@ -1,6 +1,7 @@
 require 'pry'
 require_relative './user'
 require_relative './tweet'
+require_relative './like'
 
 
 coffee_dad = User.new("coffee_dad")
@@ -10,8 +11,14 @@ tweet_1 = coffee_dad.post_tweet("mmmm coffee")
 tweet_2 = coffee_dad.post_tweet("drinking my coffee")
 tweet_3 = tea_aunt.post_tweet("steeping my tea")
 tweet_4 = tea_aunt.post_tweet("ooo la ooolong")
+tweet_5 = tea_aunt.post_tweet("peppermint soooo wintry")
 
-puts tea_aunt.tweets
+coffee_dad.like_tweet(tweet_3)
+tea_aunt.like_tweet(tweet_3)
+tea_aunt.like_tweet(tweet_1)
+tea_aunt.like_tweet(tweet_2)
+
+puts tea_aunt.liked_tweets
 
 
 
