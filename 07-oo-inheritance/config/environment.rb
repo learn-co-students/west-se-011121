@@ -2,5 +2,5 @@
 require 'pry'
 require 'require_all'
 
-require_relative '../lib/pet' # since this is a parent class, we need to force load pet before the classes in /lib are loaded by require_all
+require_relative '../lib/pet' # since this is a parent class, we need to force load pet before the classes in /lib are loaded (alphabetically) by require_all
 require_all 'lib'
