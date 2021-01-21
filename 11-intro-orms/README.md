@@ -18,11 +18,12 @@
 * be able to find a tweet by id and delete if
 
 ### What's the mapping?
-Ruby         |  SQL
+Ruby         |  SQL db
 -----------  |  ----------
-Model class  |  
-Instance     |
-Attribute    | 
+Model class  |  table
+Instance     |  row/record
+(object)
+Attribute    |  (header) columns
 
 ## Stretch goals: expand on app by adding related models as outlined below
 
