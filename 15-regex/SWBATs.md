@@ -1,7 +1,5 @@
 # REGEX 101
 
-TAUGHT BY UR FRIENDLY NEIGHBORHOOD HAL
-
 After this lesson, you should be able to....
 
 - Understand "what" regex actually is

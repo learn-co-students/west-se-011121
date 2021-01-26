@@ -12,7 +12,7 @@
 123456789
 # digits only
 
-"temp attempt"
+"temporary attempt"
 # demonstrate word boundary
 
 99
@@ -27,7 +27,7 @@
 
 # only match 1-7, or a-d. Switch cases?
 
-cat
+cat 
 mat
 pat
 bat
