@@ -8,3 +8,5 @@
     - Migrations
     - Association Macros
     - Rake tasks
+
+    Patient --< Appointment >-- Doctor >-- Departments
