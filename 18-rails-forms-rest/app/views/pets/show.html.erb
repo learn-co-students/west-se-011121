@@ -1,0 +1,9 @@
+<h1>Pets#show</h1>
+
+<p>Name: <%= @pet.name %></p>
+<p>Species: <%= @pet.species %> | Age: <%= @pet.age %> </p>
+
+<p>Good with kids? <%= @pet.good_with_kids ? "Terrific" : "Is a monster" %></p>
+
+<%= link_to "Edit this pet", edit_pet_path(@pet) %>
+<%= link_to "Back", pets_path %>
