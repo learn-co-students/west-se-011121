@@ -2,11 +2,11 @@
 
 <%= form_for @pet do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name%>
     <%= f.label :species %>
     <%= f.text_field :species %>
     <%= f.label :year_of_birth %>
-    <%= f.number_field :year_of_birth %>
+    <%= f.number_field :year_of_birth, in: 2000..2020 %>
     <br>
     <%= f.label :good_with_kids_true, "Is good with kids!" %>
     <%= f.radio_button :good_with_kids, "true" %>

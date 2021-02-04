@@ -19,8 +19,12 @@ class PetsController < ApplicationController
 
   # POST /pets
   def create
-    pet = Pet.create(pet_params)
-    redirect_to pet_path(pet) # using the URL helper method for the show route
+    if params[:pet][:name] != "" # => won't allow creation of a Pet without a name attr
+      @pet = Pet.create(pet_params)
+      redirect_to pet_path(@pet) # using the URL helper method for the show route
+    else
+      redirect_to new_pet_path
+    end
   end
 
   # GET /pets/:id/edit

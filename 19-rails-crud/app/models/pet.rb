@@ -1,5 +1,7 @@
 class Pet < ApplicationRecord
 
+    validates :name, presence: true
+
     def age
         Date.current.year - self.year_of_birth
     end
