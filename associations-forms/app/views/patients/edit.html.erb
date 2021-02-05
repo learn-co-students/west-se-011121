@@ -1,0 +1,10 @@
+<h1>Update Patient Information</h1>
+
+<%= form_for @patient do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :condition %>
+    <%= f.text_field :condition %>
+    <%= f.submit %>
+<% end %>
