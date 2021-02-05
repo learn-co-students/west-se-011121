@@ -5,5 +5,20 @@
 
 <h2>Appointments: </h2>
 
+<ol>
+    <% @patient.appointments.each do |app| %>
+        <li><%= link_to app.time, edit_appointment_path(app) %> | <%= app.doctor.name %></li>
+    <% end %>
+</ol>
+
 
 <h2>Physicians: </h2>
+
+<ol>
+    <% @patient.doctors.uniq.each do |doc| %>
+        <li><%= doc.name %> | <%= doc.specialty %></li>
+    <% end %>
+</ol>
+
+<%= link_to "Book a new appointment", new_appointment_path %>
+<%= button_to "Delete this patient record", @patient, method: :delete, data: {confirm: "Are you absoLUTley sure!"} %>

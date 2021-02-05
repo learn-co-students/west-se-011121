@@ -1,0 +1,12 @@
+<h1>Change appointment form</h1>
+
+<%= form_for @appointment do |f| %>
+    <%= f.label :time %>
+    <%= f.datetime_select :time %>
+    <%= f.label :patient %>
+    <%= f.collection_select :patient_id, @patients, :id, :name %>
+    <%= f.label :doctor %>
+    <%= f.collection_select :doctor_id, @doctors, :id, :name %>
+    <%= f.submit %>
+<% end %>
+

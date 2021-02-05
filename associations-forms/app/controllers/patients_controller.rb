@@ -14,8 +14,13 @@ class PatientsController < ApplicationController
     end
 
     def create
-        @patient = Patient.create(patient_params)
-        redirect_to patients_path
+        @patient = Patient.new(patient_params)
+        if @patient.save
+            redirect_to patients_path
+        else
+            # redirect_to new_patient_path => this method will lose any variable
+            render :new
+        end
     end
 
     def edit
