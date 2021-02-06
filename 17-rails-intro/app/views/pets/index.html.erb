@@ -1,0 +1,8 @@
+<h1>Pets#index</h1>
+
+<ul>
+    <% @pets.each do |p| %>
+        <li><a href="/pets/<%= p.id %>"><%= p.name %></li>
+    <% end %>
+</ul>
+
