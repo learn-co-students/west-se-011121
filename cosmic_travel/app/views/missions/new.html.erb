@@ -5,6 +5,7 @@
     <%= f.text_field :name %>
     <%= f.label :scientist %>
     <%= f.collection_select :scientist_id, @scientists, :id, :name%>
-    <%= f.label :scientist %>
-    <%= f.collection_select :scientist_id, @scientists, :id, :name%>
+    <%= f.label :planet %>
+    <%= f.collection_select :planet_id, @planets, :id, :name%>
+    <%= f.submit %>
 <% end %>

@@ -11,4 +11,4 @@
 </ol>
 
 <p><%= link_to "Edit this scientist", edit_scientist_path(@scientist) %></p>
-<%= button_to "Delete this scientist", @scientist, method: :delete %>
+<%= button_to "Delete this scientist", @scientist, method: :delete, data: {confirm: "Bye, Felicia!"} %>
