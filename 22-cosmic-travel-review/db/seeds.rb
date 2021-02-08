@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Scientist.destroy_all
+Mission.destroy_all
 Planet.destroy_all
 
 20.times {Planet.create(name: Faker::TvShows::StarTrek.unique.location,
