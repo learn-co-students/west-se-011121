@@ -1,0 +1,12 @@
+<h1>Scientist Profile</h1>
+
+<p>Name: <%= @scientist.name %></p>
+<p>Field: <%= @scientist.field_of_study %></p>
+
+<h4>Planets visited:</h4>
+<ol>
+    <% @scientist.planets.each do |p| %>
+        <li><%= p.name %></li>
+    <% end %>
+</ol>
+
