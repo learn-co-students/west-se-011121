@@ -19,7 +19,7 @@ Scientist -< Mission >- Planets
 
     - [X] A user should be able to see a list of all scientists
 
-    - Clicking on a scientist should take you to a detail page about the scientist, including listing all the planets they have visited.
+    - [X] Clicking on a scientist should take you to a detail page about the scientist, including listing all the planets they have visited.
 
     - A user should be able to create a new scientist.
         - Scientists must have a name and a field of study
