@@ -35,6 +35,13 @@ class ScientistsController < ApplicationController
             render :edit
         end
     end
+    
+    def destroy
+        @scientist = Scientist.find(params[:id])
+        # byebug
+        @scientist.destroy
+        redirect_to scientists_path
+    end
 
 
 

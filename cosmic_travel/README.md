@@ -26,9 +26,9 @@ Scientist -< Mission >- Planets
         - Scientists' names should be unique
         - If the user makes a mistake on the form, an error should display to the user
 
-    - [ ] A user should be able to edit the details of a scientist
+    - [X] A user should be able to edit the details of a scientist
 
-    - A user should be able to delete a scientist
+    - [X] A user should be able to delete a scientist
 
     - A user should be able to create a new mission by choosing a scientist and a planet from dropdown menus.
         - A mission must have a unique name, a scientist, and a planet.
