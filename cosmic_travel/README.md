@@ -21,12 +21,12 @@ Scientist -< Mission >- Planets
 
     - [X] Clicking on a scientist should take you to a detail page about the scientist, including listing all the planets they have visited.
 
-    - A user should be able to create a new scientist.
+    - [X] A user should be able to create a new scientist.
         - Scientists must have a name and a field of study
         - Scientists' names should be unique
         - If the user makes a mistake on the form, an error should display to the user
 
-    - A user should be able to edit the details of a scientist
+    - [ ] A user should be able to edit the details of a scientist
 
     - A user should be able to delete a scientist
 
