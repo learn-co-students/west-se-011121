@@ -1,0 +1,9 @@
+<h1>User: <%= @user.name %></h1>
+
+<h2>Allergies: </h2>
+
+<ul>
+    <% @user.ingredients.each do |i| %>
+        <li><%= link_to i.name, i %></li>
+    <% end %>
+</ul>

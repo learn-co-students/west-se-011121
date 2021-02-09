@@ -11,3 +11,5 @@
 </ul>
 
 <p><%= link_to "Add ingredient", new_recipe_ingredient_path %></p>
+<p><%= link_to "Edit recipe", edit_recipe_path %></p>
+<%= button_to "Delete this recipe", @recipe, method: :delete, data: {confirm: "Don't delete me!"} %>
