@@ -1,0 +1,7 @@
+<h1>The Dogs of Dunder Mifflin</h1>
+
+<ul>
+    <% @dogs.each do |d|%>
+        <li><%= link_to d.name, dog_path(d) %></li>
+    <% end %>
+</ul>
