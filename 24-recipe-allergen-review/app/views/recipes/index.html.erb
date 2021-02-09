@@ -1,0 +1,8 @@
+<h1>All the recipes!</h1>
+
+<ol>
+    <% @recipes.each do |r| %>
+        <li><%= link_to r.name, r %></li>
+    <% end %>
+</ol>
+
