@@ -5,7 +5,20 @@ class RecipesController < ApplicationController
     before_action :set_users, only: [:new, :create, :edit, :update]
 
     def index
-        @recipes = Recipe.all
+        # byebug
+        if params[:sort]
+            @recipes = Recipe.all.sort_by {|r| r.ingredients.count}.reverse
+        elsif params[:query]
+            @recipes = Recipe.where('name LIKE ?', "%#{params[:query]}%")
+            render :index
+        else
+            @recipes = Recipe.all
+        end
+    end
+    
+    def sorted
+        @recipes = Recipe.all.sort_by {|r| r.ingredients.count}.reverse
+        render :index
     end
 
     def show
