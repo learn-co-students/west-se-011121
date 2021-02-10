@@ -2,6 +2,8 @@
 
 <ul>
     <% @dogs.each do |d|%>
-        <li><%= link_to d.name, dog_path(d) %></li>
+        <li><%= link_to d.name, dog_path(d) %> | Num employees: <%= d.employees.count %></li>
     <% end %>
 </ul>
+
+<%= link_to "Sort by num employees", "/dogs/sorted" %>

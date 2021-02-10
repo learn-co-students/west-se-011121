@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
 
-    before_action :set_employee, only: [:show, :edit]
+    before_action :set_employee, only: [:show, :edit, :update]
 
     def index
         @employees = Employee.all
@@ -25,11 +25,16 @@ class EmployeesController < ApplicationController
     end
 
     def edit
-
+        
     end
-
+    
     def update
         
+        if @employee.update(employee_params)
+            redirect_to @employee
+        else
+            render :edit
+        end
     end
 
     private
