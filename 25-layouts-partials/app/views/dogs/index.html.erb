@@ -1,0 +1,4 @@
+<h1>Dogs up for Adoption:</h1>
+<%=render partial: 'adoptable', locals: {dogs: Dog.adoptable}%>
+<h1>Adopted Dogs:</h1>
+<%=render partial: 'owned', locals: {dogs: Dog.owned}%>
