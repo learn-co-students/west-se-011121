@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class DogsController < ApplicationController
+
+  layout false
+  
   def new
     @dog = Dog.new
   end
