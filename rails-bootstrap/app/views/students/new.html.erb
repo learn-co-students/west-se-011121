@@ -1,0 +1,12 @@
+<%= form_for @student do |f| %>
+  <br>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :cohort_id %>
+    <%= f.number_field :cohort_id  %>
+  </div>
+  <%= f.submit :class => 'btn btn-secondary' %>
+<% end %>

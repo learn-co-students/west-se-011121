@@ -1,0 +1,10 @@
+<% @cohorts.each do |cohort| %>
+  <div class='card'>
+    <div class='card-body'>
+      <h1><%= cohort.name %></h1>
+      <p><%= link_to "Show Page", cohort_path(cohort) %></p>
+    </div>
+  </div>
+  
+<% end %>
+<button><%= link_to 'New Cohort?', new_cohort_path %> </button>

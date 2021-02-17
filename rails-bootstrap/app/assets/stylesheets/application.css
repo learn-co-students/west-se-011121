@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ #override {
+  color: white;
+  background-color: black;
+}
