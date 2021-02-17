@@ -1,0 +1,10 @@
+<div class="container" id="log_in_form">
+    <h2>Hi Login! </h2>
+    <%= form_for :log_in , url: log_in_index_path do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+        <%= f.submit%>
+    <% end %>
+</div>
