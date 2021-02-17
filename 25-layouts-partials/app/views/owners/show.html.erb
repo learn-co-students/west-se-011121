@@ -1,0 +1,5 @@
+<h1><%= @owner.name %></h1>
+<h3>Dogs:</h3>
+
+  <%= render partial: 'dogs/owned_dogs', locals: {dogs: @owner.dogs} %>
+  <%= render partial: 'dogs/stats', locals: {dogs: @owner.dogs } %>

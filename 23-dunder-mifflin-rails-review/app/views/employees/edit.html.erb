@@ -1,0 +1,19 @@
+<h1>Dunder Mifflin change employee</h1>
+
+<%= form_for @employee do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <%= f.label :alias %>
+    <%= f.text_field :alias %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :office %>
+    <%= f.text_field :office %>
+    <%= f.label :img_url %>
+    <%= f.text_field :img_url %>
+    <%= f.collection_select(:dog_id, Dog.all, :id, :name) %>
+    <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Scientist Profile</h1>
+
+<p>Name: <%= @scientist.name %></p>
+<p>Field: <%= @scientist.field_of_study %></p>
+
+<h4>Planets visited:</h4>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Distanct from Earth</th>
+        <th>Nearest Star</th>
+    </tr>
+    <% @scientist.planets.each do |p| %>
+        <tr>
+            <td><%= p.name %></td>
+            <td><%= p.distance_from_earth %></td>
+            <td><%= p.nearest_star %></td>
+        </tr>
+    <% end%>
+</table>
+
+<p><%= link_to "Edit this scientist", edit_scientist_path(@scientist) %></p>
+<%= button_to "Delete this scientist", @scientist, method: :delete, data: {confirm: "Are you sure?"} %>

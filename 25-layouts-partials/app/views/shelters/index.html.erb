@@ -1,0 +1,7 @@
+<h1>All Shelters</h1>
+<% @shelters.each do |shelter| %>
+  <h3><%= link_to shelter.name, shelter_path(shelter) %></h3>
+    <%= render partial: 'dogs/shelter_dogs', locals: {dogs: shelter.dogs} %>
+    <%= render partial: 'dogs/stats', locals: {dogs: shelter.dogs} %>
+
+<% end %>

@@ -1,0 +1,18 @@
+<h1>Add an ingredient</h1>
+
+<%= form_for @recipe_ingredient do |f| %>   
+    <% if @recipe_ingredient.errors.any? %>
+        <ul>
+            <% @recipe_ingredient.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    <%= f.label :recipe %>
+    <%= f.collection_select :recipe_id, @recipes, :id, :name %>
+    <%= f.label :ingredient %>
+    <%= f.collection_select :ingredient_id, @ingredients, :id, :name %>
+    <%= f.label :measurement %>
+    <%= f.text_field :measurement %>
+    <%= f.submit %>
+<% end %>

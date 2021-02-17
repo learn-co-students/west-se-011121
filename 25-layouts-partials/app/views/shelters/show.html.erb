@@ -1,0 +1,3 @@
+<h1><%= @shelter.name %></h1>
+  <%= render 'dogs/shelter_dogs', dogs: @shelter.dogs %>
+  <%= render partial: 'dogs/stats', locals: {dogs: @shelter.dogs} %>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RecipeAllergenReview</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <button><%= link_to "Recipes Home", recipes_path %></button>
+    <button><%= link_to "Ingredients Home", ingredients_path %></button>
+    <%= yield %>
+  </body>
+</html>

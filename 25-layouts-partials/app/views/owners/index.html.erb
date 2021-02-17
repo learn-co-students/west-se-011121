@@ -1,0 +1,7 @@
+<h1>All Owners:</h1>
+<% Owner.dog_owners.each do |owner| %>
+  <h2><%= owner.name %>'s dogs:</h2>
+  
+  <%= render partial: 'dogs/owned_dogs', locals: {dogs: owner.dogs} %>
+  <%= render partial: 'dogs/stats', locals: {dogs: owner.dogs} %>
+<% end %>

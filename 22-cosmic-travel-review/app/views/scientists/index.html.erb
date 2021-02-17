@@ -1,0 +1,9 @@
+<h1>Active Scientist List</h1>
+
+<ol>
+    <% @scientists.each do |s| %>
+        <li><%= link_to s.name, scientist_path(s) %></li>
+    <% end %>
+</ol>
+
+<button><%= link_to "Create a scientist", new_scientist_path %></button>
