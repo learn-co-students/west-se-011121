@@ -19,24 +19,30 @@ class PostsController < ApplicationController
     end
 
     def edit
-        
+        if !is_authorized?
+            flash[:danger] = "You don't own this post!"
+            redirect_to posts_path
+        end
+        # render :edit
     end
 
     def update
-       
-        if @post.update(post_params)
-            redirect_to posts_path
-        else
-            render :edit
-        end
-       
+        if is_authorized?
+            if @post.update(post_params)
+                redirect_to posts_path
+            else
+                render :edit
+            end
+        end 
     end
     
 
     def destroy
-        
-        @post.destroy
-       
+        if is_authorized?
+            @post.destroy
+        else
+            flash[:danger] = "Don't go messin' with other ppls posts!"
+        end
         redirect_to posts_path
     end
 
@@ -48,6 +54,10 @@ class PostsController < ApplicationController
 
     def post_params
         params.require(:post).permit(:title, :content, :user_id)
+    end
+
+    def is_authorized?
+        current_user == @post.user
     end
 
 end
