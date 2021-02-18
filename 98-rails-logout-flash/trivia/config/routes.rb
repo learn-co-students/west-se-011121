@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/', to: 'users#new', as: 'signup'
+  get '/logout', to: 'log_in#logout', as: 'logout'
   resources :users, only: [:new, :create]
   resources :responses
 

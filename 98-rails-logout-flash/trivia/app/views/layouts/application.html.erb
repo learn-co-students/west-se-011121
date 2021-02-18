@@ -12,6 +12,17 @@
   </head>
 
   <body>
+  <nav>
+    <%= render_login %>
+  </nav>
+  <% if flash %>
+    <% flash.each do |key, msg| %>
+      <div class="<%= key %>">
+       <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
+
 
     <%= yield %>
   </body>

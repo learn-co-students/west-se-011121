@@ -5,7 +5,7 @@ class ResponsesController < ApplicationController
     end
 
     def define_question
-        @number_correct = cookies["number_correct"]
+        @number_correct = session["number_correct"]
         @question = Question.order("RANDOM()").limit(1)[0]
 
     end
@@ -15,15 +15,16 @@ class ResponsesController < ApplicationController
     end
 
     def create
-        if !cookies["number_correct"] 
-            cookies["number_correct"] ||= 0
+        if !session["number_correct"] 
+            session["number_correct"] ||= 0
         end 
-        byebug
-        response = Response.create(response_params)
+        # byebug
+        # response = Response.create(response_params)
+        response = current_user.responses.create(response_params)
 
         if response.question.correct_answer == response.answer
 
-            cookies["number_correct"] = cookies["number_correct"].to_i + 1
+            session["number_correct"] = session["number_correct"].to_i + 1
             
             puts "Correct"
         else
@@ -35,6 +36,7 @@ class ResponsesController < ApplicationController
     end
 
     def response_params
-        params.require(:response).permit(:answer_id, :question_id).with_defaults(user_id: session[:user_id])
+        # params.require(:response).permit(:answer_id, :question_id).with_defaults(user_id: session[:user_id])
+        params.require(:response).permit(:answer_id, :question_id)
     end
 end

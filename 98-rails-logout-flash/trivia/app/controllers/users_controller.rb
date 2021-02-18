@@ -9,9 +9,11 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid?
             log_in_user(@user.id)
-            redirect_to new_response_path
+            # session[:user_id] = @user.id
+            redirect_to new_response_path, alert: "Welcome, #{@user.username}!"
         else
-            redirect_to user_new
+            # flash.notice = "Signup was incomplete; try again!"
+            redirect_to new_user_path, notice: "Signup was incomplete; try again!"
         end 
     end 
 

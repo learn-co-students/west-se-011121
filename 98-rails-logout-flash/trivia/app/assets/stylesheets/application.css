@@ -46,3 +46,11 @@
     border-color: grey;
  }
 
+ .success {
+    color: green;
+ }
+
+ .error {
+    color: red;
+ }
+
