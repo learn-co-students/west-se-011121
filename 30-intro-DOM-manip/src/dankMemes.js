@@ -1,6 +1,5 @@
 const dankMemes = [
   'https://i.imgur.com/dzbQCj4.png',
-  'https://i.imgur.com/ZwfLpVW.jpg',
   'https://i.imgur.com/xNWld3g.jpg',
   'https://i.redd.it/4skcofasa1p01.png',
   'https://i.redd.it/dmd4uc4n3wm11.jpg',
