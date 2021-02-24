@@ -6,6 +6,9 @@ function listener(event){
         case "TEXT":
             alert(event.target.innerText)
             break
+        case "LI":
+            alert(`I'm a ${event.target.dataset.animal}`)
+            break
         case "BUTTON":
             event.target.parentNode.remove()
             break
@@ -25,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     form.addEventListener('submit', function(event){
         event.preventDefault()
-        console.log(`here's the form event: ${event}`)
         const input = document.querySelector('#noise-input')
         console.log(input.value)
         
