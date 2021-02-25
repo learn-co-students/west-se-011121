@@ -6,6 +6,50 @@
 //   }
 // }
 
+function addPokemon(event){
+  event.preventDefault()
+  const newName = document.querySelector("#name-input").value
+  const sprite  = document.querySelector("#sprite-input").value
+  console.log(newName, sprite);
+  const newPoke = {
+    name: newName,
+    sprites: {
+      front: sprite,
+      back: sprite
+    }
+  }
+  console.log(newPoke)
+  fetch("http://localhost:3000/pokemon", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(newPoke)
+  })
+  .then(res => res.json())
+  .then((newObj) => {  // optimistic rendering
+    document.querySelector("#pokemon-container").innerHTML += renderSinglePokemon(newObj)
+  })
+}
+
+function removePokemon(event){
+  console.log("removing")
+  console.dir(event.target)
+  if(event.target.dataset.action == 'delete'){
+    const id = event.target.dataset.id
+    fetch(BASEURL + `/${id}`, {
+      method: 'DELETE'
+    })
+    .then(() => event.target.parentNode.parentNode.remove()) // optimistic
+  }
+}
+
+function updatePokemon(event){
+  const newName = event.target.name.value
+  console.log(newName)
+}
+
 /************************* Helper Fns for Producing HTML **********************/
 function renderAllPokemon(pokemonArray) {
   return pokemonArray.map(renderSinglePokemon).join('')
@@ -19,8 +63,8 @@ function renderSinglePokemon(pokemon) {
       <div class="pokemon-image">
         <img data-id="${pokemon.id}" data-action="flip" class="toggle-sprite" src="${pokemon.sprites.front}">
       </div>
-      <button data-action="delete" class="pokemon-delete-button">Delete</button><br>
-      <form class="pokemon-update"><input type="text"><input type="submit"></form>
+      <button data-id="${pokemon.id}" data-action="delete" class="pokemon-delete-button">Delete</button><br>
+      <form data-id="${pokemon.id}" class="pokemon-update"><input name="newName" type="text"><input type="submit"></form>
     </div>
   </div>`)
 }
