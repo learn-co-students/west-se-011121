@@ -24,3 +24,9 @@ In its current state, you will need to serve the (static) front end files using 
 
 ## Why?
 This setup allow us to use stricter CORS security in `cors.rb` on the backend.  If you don't wish to install and use `http-server` in development, you can change the appropriate line in `cors.rb` to `origin '*'` to circumvent Rails' CORS protections.
+
+## Resources
+
+[Rails API Docs](http://guides.rubyonrails.org/api_app.html)
+[Versioning a Rails API](https://chriskottom.com/blog/2017/04/versioning-a-rails-api/)
+[CORS Security on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
