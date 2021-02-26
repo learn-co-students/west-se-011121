@@ -10,7 +10,6 @@ function addPokemon(event){
   event.preventDefault()
   const newName = document.querySelector("#name-input").value
   const sprite  = document.querySelector("#sprite-input").value
-  console.log(newName, sprite);
   const newPoke = {
     name: newName,
     sprites: {
@@ -18,36 +17,52 @@ function addPokemon(event){
       back: sprite
     }
   }
-  console.log(newPoke)
-  fetch("http://localhost:3000/pokemon", {
+  const options = {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
     body: JSON.stringify(newPoke)
-  })
+  }
+  fetch(BASEURL, options)
   .then(res => res.json())
-  .then((newObj) => {  // optimistic rendering
+  .then((newObj) => {  // pessimistic rendering
     document.querySelector("#pokemon-container").innerHTML += renderSinglePokemon(newObj)
   })
 }
 
 function removePokemon(event){
-  console.log("removing")
-  console.dir(event.target)
+  // console.log("removing")
+  // console.dir(event.target)
+  console.dir(event.target.tagName)
   if(event.target.dataset.action == 'delete'){
     const id = event.target.dataset.id
     fetch(BASEURL + `/${id}`, {
       method: 'DELETE'
     })
-    .then(() => event.target.parentNode.parentNode.remove()) // optimistic
+    // .then(fetchAllPokemon) // pessimistic
+    event.target.parentNode.parentNode.remove() // optimistic rendering
+
   }
 }
 
 function updatePokemon(event){
-  const newName = event.target.name.value
-  console.log(newName)
+  event.preventDefault()
+  const newName = event.target.newName.value
+  const updatedPoke = {
+    name: newName
+  }
+  const id = event.target.dataset.id
+  fetch(BASEURL + `/${id}`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(updatedPoke)
+  })
+    .then(() => fetchAllPokemon()) // pessimistic rendering
 }
 
 /************************* Helper Fns for Producing HTML **********************/

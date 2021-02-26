@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#pokemon-post-form')
   form.addEventListener('submit', addPokemon)
   const container = document.querySelector('#pokemon-container')
-  console.log('container: ', container);
   container.addEventListener('click', removePokemon)
   fetchAllPokemon()
   container.addEventListener('submit', updatePokemon)
   fetchAllPokemon()
 })
+
+// const pokeArr = []
 
 function fetchAllPokemon(){
   fetch(BASEURL)
@@ -21,6 +22,7 @@ function fetchAllPokemon(){
     .then((response) => response.json())
     .then((jsonData) => {
       const container = document.querySelector('#pokemon-container')
+      // pokeArr = jsonData
       container.innerHTML = renderAllPokemon(jsonData)
       
     })

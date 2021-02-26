@@ -1,10 +1,990 @@
 {
   "pokemon": [
     {
+      "height": 10,
+      "weight": 130,
+      "id": 2,
+      "name": "ivysaur",
+      "abilities": [
+        "overgrow",
+        "chlorophyll"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 80,
+          "name": "special-defense"
+        },
+        {
+          "value": 80,
+          "name": "special-attack"
+        },
+        {
+          "value": 63,
+          "name": "defense"
+        },
+        {
+          "value": 62,
+          "name": "attack"
+        },
+        {
+          "value": 60,
+          "name": "speed"
+        },
+        {
+          "value": 60,
+          "name": "hp"
+        }
+      ],
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png"
+      }
+    },
+    {
+      "height": 20,
+      "weight": 1000,
+      "id": 3,
+      "name": "venusaur",
+      "abilities": [
+        "overgrow",
+        "chlorophyll"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 100,
+          "name": "special-defense"
+        },
+        {
+          "value": 100,
+          "name": "special-attack"
+        },
+        {
+          "value": 83,
+          "name": "defense"
+        },
+        {
+          "value": 82,
+          "name": "attack"
+        },
+        {
+          "value": 80,
+          "name": "speed"
+        },
+        {
+          "value": 80,
+          "name": "hp"
+        }
+      ],
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png"
+      }
+    },
+    {
+      "height": 6,
+      "weight": 85,
+      "id": 5,
+      "name": "charmander",
+      "abilities": [
+        "blaze",
+        "solar-power"
+      ],
+      "moves": [
+        "mega-punch",
+        "scratch",
+        "mega-kick",
+        "ember",
+        "submission",
+        "counter",
+        "seismic-toss",
+        "dragon-rage",
+        "fire-spin",
+        "rage"
+      ],
+      "stats": [
+        {
+          "value": 65,
+          "name": "speed"
+        },
+        {
+          "value": 60,
+          "name": "special-attack"
+        },
+        {
+          "value": 52,
+          "name": "attack"
+        },
+        {
+          "value": 50,
+          "name": "special-defense"
+        },
+        {
+          "value": 43,
+          "name": "defense"
+        },
+        {
+          "value": 39,
+          "name": "hp"
+        }
+      ],
+      "types": [
+        "fire"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png"
+      }
+    },
+    {
+      "height": 11,
+      "weight": 190,
+      "id": 6,
+      "name": "charmeleon",
+      "abilities": [
+        "blaze",
+        "solar-power"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 80,
+          "name": "speed"
+        },
+        {
+          "value": 80,
+          "name": "special-attack"
+        },
+        {
+          "value": 65,
+          "name": "special-defense"
+        },
+        {
+          "value": 64,
+          "name": "attack"
+        },
+        {
+          "value": 58,
+          "name": "defense"
+        },
+        {
+          "value": 58,
+          "name": "hp"
+        }
+      ],
+      "types": [
+        "fire"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png"
+      }
+    },
+    {
+      "height": 17,
+      "weight": 905,
+      "id": 7,
+      "name": "charizard",
+      "abilities": [
+        "blaze",
+        "solar-power"
+      ],
+      "moves": [
+        "mega-punch",
+        "scratch",
+        "mega-kick",
+        "ember",
+        "submission",
+        "counter",
+        "seismic-toss",
+        "dragon-rage",
+        "fire-spin",
+        "fissure"
+      ],
+      "stats": [
+        {
+          "value": 109,
+          "name": "special-attack"
+        },
+        {
+          "value": 100,
+          "name": "speed"
+        },
+        {
+          "value": 85,
+          "name": "special-defense"
+        },
+        {
+          "value": 84,
+          "name": "attack"
+        },
+        {
+          "value": 78,
+          "name": "defense"
+        },
+        {
+          "value": 78,
+          "name": "hp"
+        }
+      ],
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
+      }
+    },
+    {
+      "height": 5,
+      "weight": 90,
+      "id": 10,
+      "name": "squirtle",
+      "abilities": [
+        "torrent",
+        "rain-dish"
+      ],
+      "moves": [
+        "mega-punch",
+        "mega-kick",
+        "hydro-pump",
+        "bubble-beam",
+        "submission",
+        "counter",
+        "seismic-toss",
+        "rage",
+        "withdraw",
+        "bide"
+      ],
+      "stats": [
+        {
+          "value": 65,
+          "name": "defense"
+        },
+        {
+          "value": 64,
+          "name": "special-defense"
+        },
+        {
+          "value": 50,
+          "name": "special-attack"
+        },
+        {
+          "value": 48,
+          "name": "attack"
+        },
+        {
+          "value": 44,
+          "name": "hp"
+        },
+        {
+          "value": 43,
+          "name": "speed"
+        }
+      ],
+      "types": [
+        "water"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"
+      }
+    },
+    {
+      "height": 10,
+      "weight": 225,
+      "id": 11,
+      "name": "wartortle",
+      "abilities": [
+        "torrent",
+        "rain-dish"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 80,
+          "name": "special-defense"
+        },
+        {
+          "value": 80,
+          "name": "defense"
+        },
+        {
+          "value": 65,
+          "name": "special-attack"
+        },
+        {
+          "value": 63,
+          "name": "attack"
+        },
+        {
+          "value": 59,
+          "name": "hp"
+        },
+        {
+          "value": 58,
+          "name": "speed"
+        }
+      ],
+      "types": [
+        "water"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/8.png"
+      }
+    },
+    {
+      "height": 16,
+      "weight": 855,
+      "id": 12,
+      "name": "blastoise",
+      "abilities": [
+        "torrent",
+        "rain-dish"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 105,
+          "name": "special-defense"
+        },
+        {
+          "value": 100,
+          "name": "defense"
+        },
+        {
+          "value": 85,
+          "name": "special-attack"
+        },
+        {
+          "value": 83,
+          "name": "attack"
+        },
+        {
+          "value": 79,
+          "name": "hp"
+        },
+        {
+          "value": 78,
+          "name": "speed"
+        }
+      ],
+      "types": [
+        "water"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/9.png"
+      }
+    },
+    {
+      "height": 3,
+      "weight": 29,
+      "id": 14,
+      "name": "caterpie",
+      "abilities": [
+        "shield-dust",
+        "run-away"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 45,
+          "name": "speed"
+        },
+        {
+          "value": 45,
+          "name": "hp"
+        },
+        {
+          "value": 35,
+          "name": "defense"
+        },
+        {
+          "value": 30,
+          "name": "attack"
+        },
+        {
+          "value": 20,
+          "name": "special-defense"
+        },
+        {
+          "value": 20,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "bug"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10.png"
+      }
+    },
+    {
+      "height": 7,
+      "weight": 99,
+      "id": 15,
+      "name": "metapod",
+      "abilities": [
+        "shed-skin"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 55,
+          "name": "defense"
+        },
+        {
+          "value": 50,
+          "name": "hp"
+        },
+        {
+          "value": 30,
+          "name": "speed"
+        },
+        {
+          "value": 25,
+          "name": "special-defense"
+        },
+        {
+          "value": 25,
+          "name": "special-attack"
+        },
+        {
+          "value": 20,
+          "name": "attack"
+        }
+      ],
+      "types": [
+        "bug"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png"
+      }
+    },
+    {
+      "height": 11,
+      "weight": 320,
+      "id": 16,
+      "name": "butterfree",
+      "abilities": [
+        "compound-eyes",
+        "tinted-lens"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 90,
+          "name": "special-attack"
+        },
+        {
+          "value": 80,
+          "name": "special-defense"
+        },
+        {
+          "value": 70,
+          "name": "speed"
+        },
+        {
+          "value": 60,
+          "name": "hp"
+        },
+        {
+          "value": 50,
+          "name": "defense"
+        },
+        {
+          "value": 45,
+          "name": "attack"
+        }
+      ],
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/12.png"
+      }
+    },
+    {
+      "height": 3,
+      "weight": 32,
+      "id": 17,
+      "name": "weedle",
+      "abilities": [
+        "shield-dust",
+        "run-away"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 50,
+          "name": "speed"
+        },
+        {
+          "value": 40,
+          "name": "hp"
+        },
+        {
+          "value": 35,
+          "name": "attack"
+        },
+        {
+          "value": 30,
+          "name": "defense"
+        },
+        {
+          "value": 20,
+          "name": "special-defense"
+        },
+        {
+          "value": 20,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png"
+      }
+    },
+    {
+      "height": 6,
+      "weight": 100,
+      "id": 18,
+      "name": "kakuna",
+      "abilities": [
+        "shed-skin"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 50,
+          "name": "defense"
+        },
+        {
+          "value": 45,
+          "name": "hp"
+        },
+        {
+          "value": 35,
+          "name": "speed"
+        },
+        {
+          "value": 25,
+          "name": "special-defense"
+        },
+        {
+          "value": 25,
+          "name": "special-attack"
+        },
+        {
+          "value": 25,
+          "name": "attack"
+        }
+      ],
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png"
+      }
+    },
+    {
+      "height": 10,
+      "weight": 295,
+      "id": 19,
+      "name": "beedrill",
+      "abilities": [
+        "swarm",
+        "sniper"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 90,
+          "name": "attack"
+        },
+        {
+          "value": 80,
+          "name": "special-defense"
+        },
+        {
+          "value": 75,
+          "name": "speed"
+        },
+        {
+          "value": 65,
+          "name": "hp"
+        },
+        {
+          "value": 45,
+          "name": "special-attack"
+        },
+        {
+          "value": 40,
+          "name": "defense"
+        }
+      ],
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/15.png"
+      }
+    },
+    {
+      "height": 3,
+      "weight": 18,
+      "id": 21,
+      "name": "pidgey",
+      "abilities": [
+        "keen-eye",
+        "tangled-feet",
+        "big-pecks"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 56,
+          "name": "speed"
+        },
+        {
+          "value": 45,
+          "name": "attack"
+        },
+        {
+          "value": 40,
+          "name": "defense"
+        },
+        {
+          "value": 40,
+          "name": "hp"
+        },
+        {
+          "value": 35,
+          "name": "special-defense"
+        },
+        {
+          "value": 35,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/16.png"
+      }
+    },
+    {
+      "height": 11,
+      "weight": 300,
+      "id": 22,
+      "name": "pidgeotto",
+      "abilities": [
+        "keen-eye",
+        "tangled-feet",
+        "big-pecks"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 71,
+          "name": "speed"
+        },
+        {
+          "value": 63,
+          "name": "hp"
+        },
+        {
+          "value": 60,
+          "name": "attack"
+        },
+        {
+          "value": 55,
+          "name": "defense"
+        },
+        {
+          "value": 50,
+          "name": "special-defense"
+        },
+        {
+          "value": 50,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/17.png"
+      }
+    },
+    {
+      "height": 15,
+      "weight": 395,
+      "id": 23,
+      "name": "pidgeot",
+      "abilities": [
+        "keen-eye",
+        "tangled-feet",
+        "big-pecks"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 101,
+          "name": "speed"
+        },
+        {
+          "value": 83,
+          "name": "hp"
+        },
+        {
+          "value": 80,
+          "name": "attack"
+        },
+        {
+          "value": 75,
+          "name": "defense"
+        },
+        {
+          "value": 70,
+          "name": "special-defense"
+        },
+        {
+          "value": 70,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/18.png"
+      }
+    },
+    {
+      "height": 3,
+      "weight": 35,
+      "id": 25,
+      "name": "rattata",
+      "abilities": [
+        "run-away",
+        "guts",
+        "hustle"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 72,
+          "name": "speed"
+        },
+        {
+          "value": 56,
+          "name": "attack"
+        },
+        {
+          "value": 35,
+          "name": "special-defense"
+        },
+        {
+          "value": 35,
+          "name": "defense"
+        },
+        {
+          "value": 30,
+          "name": "hp"
+        },
+        {
+          "value": 25,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "normal"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/19.png"
+      }
+    },
+    {
+      "height": 7,
+      "weight": 185,
+      "id": 26,
+      "name": "raticate",
+      "abilities": [
+        "run-away",
+        "guts",
+        "hustle"
+      ],
+      "moves": [
+        "bubble-beam",
+        "rage",
+        "focus-energy",
+        "bide",
+        "skull-bash",
+        "hyper-fang",
+        "super-fang"
+      ],
+      "stats": [
+        {
+          "value": 97,
+          "name": "speed"
+        },
+        {
+          "value": 81,
+          "name": "attack"
+        },
+        {
+          "value": 70,
+          "name": "special-defense"
+        },
+        {
+          "value": 60,
+          "name": "defense"
+        },
+        {
+          "value": 55,
+          "name": "hp"
+        },
+        {
+          "value": 50,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "normal"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/20.png"
+      }
+    },
+    {
+      "height": 3,
+      "weight": 20,
+      "id": 27,
+      "name": "spearow",
+      "abilities": [
+        "keen-eye",
+        "sniper"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 70,
+          "name": "speed"
+        },
+        {
+          "value": 60,
+          "name": "attack"
+        },
+        {
+          "value": 40,
+          "name": "hp"
+        },
+        {
+          "value": 31,
+          "name": "special-defense"
+        },
+        {
+          "value": 31,
+          "name": "special-attack"
+        },
+        {
+          "value": 30,
+          "name": "defense"
+        }
+      ],
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/21.png"
+      }
+    },
+    {
+      "height": 12,
+      "weight": 380,
+      "id": 28,
+      "name": "fearow",
+      "abilities": [
+        "keen-eye",
+        "sniper"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 100,
+          "name": "speed"
+        },
+        {
+          "value": 90,
+          "name": "attack"
+        },
+        {
+          "value": 65,
+          "name": "defense"
+        },
+        {
+          "value": 65,
+          "name": "hp"
+        },
+        {
+          "value": 61,
+          "name": "special-defense"
+        },
+        {
+          "value": 61,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/22.png"
+      }
+    },
+    {
       "height": 20,
       "weight": 69,
       "id": 29,
-      "name": "Erik",
+      "name": "ekans",
       "abilities": [
         "intimidate",
         "shed-skin",
@@ -46,10 +1026,65 @@
       }
     },
     {
+      "height": 35,
+      "weight": 650,
+      "id": 30,
+      "name": "arbok",
+      "abilities": [
+        "intimidate",
+        "shed-skin",
+        "unnerve"
+      ],
+      "moves": [
+        "wrap",
+        "poison-sting",
+        "acid",
+        "mega-drain",
+        "fissure",
+        "rage",
+        "bide",
+        "skull-bash",
+        "glare"
+      ],
+      "stats": [
+        {
+          "value": 85,
+          "name": "attack"
+        },
+        {
+          "value": 80,
+          "name": "speed"
+        },
+        {
+          "value": 79,
+          "name": "special-defense"
+        },
+        {
+          "value": 69,
+          "name": "defense"
+        },
+        {
+          "value": 65,
+          "name": "special-attack"
+        },
+        {
+          "value": 60,
+          "name": "hp"
+        }
+      ],
+      "types": [
+        "poison"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/24.png"
+      }
+    },
+    {
       "height": 4,
       "weight": 60,
       "id": 32,
-      "name": "Johnny",
+      "name": "pikachu",
       "abilities": [
         "static",
         "lightning-rod"
@@ -137,7 +1172,7 @@
       "height": 6,
       "weight": 120,
       "id": 40,
-      "name": "Chloe",
+      "name": "sandshrew",
       "abilities": [
         "sand-veil",
         "sand-rush"
@@ -192,7 +1227,7 @@
       "height": 10,
       "weight": 295,
       "id": 41,
-      "name": "Ange",
+      "name": "sandslash",
       "abilities": [
         "sand-veil",
         "sand-rush"
@@ -236,7 +1271,7 @@
       "height": 4,
       "weight": 70,
       "id": 42,
-      "name": "Harrf",
+      "name": "nidoran-f",
       "abilities": [
         "poison-point",
         "rivalry",
@@ -289,7 +1324,7 @@
       "height": 8,
       "weight": 200,
       "id": 43,
-      "name": "Jasper",
+      "name": "nidorina",
       "abilities": [
         "poison-point",
         "rivalry",
@@ -328,6 +1363,63 @@
       "sprites": {
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/30.png"
+      }
+    },
+    {
+      "height": 13,
+      "weight": 600,
+      "id": 44,
+      "name": "nidoqueen",
+      "abilities": [
+        "poison-point",
+        "rivalry",
+        "sheer-force"
+      ],
+      "moves": [
+        "mega-punch",
+        "pay-day",
+        "scratch",
+        "mega-kick",
+        "horn-drill",
+        "poison-sting",
+        "bubble-beam",
+        "submission",
+        "counter",
+        "seismic-toss"
+      ],
+      "stats": [
+        {
+          "value": 92,
+          "name": "attack"
+        },
+        {
+          "value": 90,
+          "name": "hp"
+        },
+        {
+          "value": 87,
+          "name": "defense"
+        },
+        {
+          "value": 85,
+          "name": "special-defense"
+        },
+        {
+          "value": 76,
+          "name": "speed"
+        },
+        {
+          "value": 75,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "poison",
+        "ground"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/31.png"
       }
     },
     {
@@ -373,6 +1465,51 @@
       "sprites": {
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/32.png"
+      }
+    },
+    {
+      "height": 9,
+      "weight": 195,
+      "id": 46,
+      "name": "nidorino",
+      "abilities": [
+        "poison-point",
+        "rivalry",
+        "hustle"
+      ],
+      "moves": [],
+      "stats": [
+        {
+          "value": 72,
+          "name": "attack"
+        },
+        {
+          "value": 65,
+          "name": "speed"
+        },
+        {
+          "value": 61,
+          "name": "hp"
+        },
+        {
+          "value": 57,
+          "name": "defense"
+        },
+        {
+          "value": 55,
+          "name": "special-defense"
+        },
+        {
+          "value": 55,
+          "name": "special-attack"
+        }
+      ],
+      "types": [
+        "poison"
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/33.png"
       }
     },
     {
@@ -6189,14 +7326,6 @@
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/151.png"
       }
-    },
-    {
-      "name": "Adan",
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-      },
-      "id": 207
     }
   ]
 }
