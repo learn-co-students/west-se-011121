@@ -41,16 +41,32 @@ document.addEventListener("DOMContentLoaded", function() {
         li.addEventListener('click', showBook)
         list.appendChild(li)
     }
+
+    // could use this function when creating list of likers in card
+    // function listLikers(likers){
+    //     return likers.map(user => `<li>${user.username}</li>`).join('')
+    // }
     
     function showBook(event){
         console.log('event: ', event.target);
         const id = event.target.dataset.bookId
         getOneBook(id)
-            // .then(book => {
-            //     const card = `<div>
-            //         <img src="${}
-            //     </div>`
-            // })
+            .then(book => {
+                // TODO: add alt to image
+                const card = `<div>
+                <img src="${book.img_url}" />
+                <h1>${book.title}</h1>
+                <h1>${book.author}</h1>
+                <p>${book.description}</p>
+                <ul>
+                ${book.users.map(user => `<li>${user.username}</li>`).join('')}
+                </ul>
+                </div>`
+                const button = document.createElement('button')
+                button.innerText = "LIKE"
+                show.innerHTML = card
+                show.appendChild(button)
+            })
     
        }
 
