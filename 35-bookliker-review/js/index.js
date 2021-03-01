@@ -1,6 +1,6 @@
 // declare constants i.e. url
 const baseURL = "http://localhost:3000/books"
-
+const currentUser = 1
 
 document.addEventListener("DOMContentLoaded", function() {
     // Declare variables
@@ -10,24 +10,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Register Event Listeners
         // add event listers to above as needed (click on title, click on LIKE)
+        show.addEventListener('click', handleLike)
 
     // Standalone Functions
        // fetch all books
-       function getAllBooks(){
-           fetch(baseURL)
-            .then(res => res.json())
-            .then(books => listBooks(books))
-       }
+    function getAllBooks(){
+        fetch(baseURL)
+        .then(res => res.json())
+        .then(books => listBooks(books))
+    }
 
-       // fetch one book
-       function getOneBook(id){
-            return fetch(baseURL + `/${id}`)
-                .then(res => res.json())
-        }
+    // fetch one book
+    function getOneBook(id){
+        return fetch(baseURL + `/${id}`)
+            .then(res => res.json())
+    }
     
     // fetch a user
+    function getUser(id){
+        return fetch(`http://localhost:3000/users/${id}`)
+            .then(res => res.json())
+    }
     
     // patch fetch to update likes
+    function updateLikes(id, body, event){
+       fetch(baseURL + `/${id}`, {
+           method: 'PATCH', 
+           headers: {
+               'Content-Type': 'application/json',
+               'Accept': 'application/json'
+           },
+           body: JSON.stringify(body)
+       })
+       .then(res => res.json())
+       .then((book) => {
+           console.log('book: ', book);
+           showBook(event)
+        })
+
+    }
     
     // create <li></li> for each book and add to DOM
     function listBooks(books){
@@ -47,8 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
     //     return likers.map(user => `<li>${user.username}</li>`).join('')
     // }
     
+    // handleTitleClick
     function showBook(event){
-        console.log('event: ', event.target);
         const id = event.target.dataset.bookId
         getOneBook(id)
             .then(book => {
@@ -63,16 +84,44 @@ document.addEventListener("DOMContentLoaded", function() {
                 </ul>
                 </div>`
                 const button = document.createElement('button')
-                button.innerText = "LIKE"
+                if (book.users.some(user => user.id === currentUser)){
+                    button.innerText = "UNLIKE"
+                } else {
+                    button.innerText = "LIKE"
+                }
+                button.dataset.bookId = book.id
+                // could add event listener here or bubble up to show list
                 show.innerHTML = card
                 show.appendChild(button)
             })
     
        }
 
-       // handleTitleClick
 
        // handleLike
+       function handleLike(event){
+           if(event.target.tagName=="BUTTON"){
+            console.log(event.target);
+            const id = event.target.dataset.bookId
+            if(event.target.innerText == 'LIKE'){
+                getUser(currentUser).then(user => {
+                    getOneBook(id).then(book => {
+                        const body = {
+                            users: [...book.users, user]
+                        }
+                        updateLikes(id, body, event)
+                    })
+                })
+
+            } else {
+                getOneBook(id).then(book => {
+                    const users = book.users.filter(user => user.id != currentUser)
+                    const body = { users: [...users]}
+                    updateLikes(id, body, event)
+                })
+            }
+        }
+       }
 
 
     // Function call(s)
