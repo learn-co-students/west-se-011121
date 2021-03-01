@@ -20,15 +20,38 @@ document.addEventListener("DOMContentLoaded", function() {
        }
 
        // fetch one book
-
-       // fetch a user
-
-       // patch fetch to update likes
-
-       // create <li></li> for each book and add to DOM
-       function listBooks(books){
-           console.log('books: ', books);
-
+       function getOneBook(id){
+            return fetch(baseURL + `/${id}`)
+                .then(res => res.json())
+        }
+    
+    // fetch a user
+    
+    // patch fetch to update likes
+    
+    // create <li></li> for each book and add to DOM
+    function listBooks(books){
+        books.forEach(book => bookLi(book))
+    }
+    
+    function bookLi(book){
+        const li = document.createElement('li')
+        li.dataset.bookId = book.id
+        li.textContent = book.title
+        li.addEventListener('click', showBook)
+        list.appendChild(li)
+    }
+    
+    function showBook(event){
+        console.log('event: ', event.target);
+        const id = event.target.dataset.bookId
+        getOneBook(id)
+            // .then(book => {
+            //     const card = `<div>
+            //         <img src="${}
+            //     </div>`
+            // })
+    
        }
 
        // handleTitleClick
