@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(books => listBooks(books))
     }
 
-    // fetch one book
+    // fetch one book by id
     function getOneBook(id){
         return fetch(baseURL + `/${id}`)
             .then(res => res.json())
     }
     
-    // fetch a user
+    // fetch a user by id
     function getUser(id){
         return fetch(`http://localhost:3000/users/${id}`)
             .then(res => res.json())
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
        })
        .then(res => res.json())
        .then((book) => {
-           console.log('book: ', book);
+           // using pessimistic rendering so that list of likers is always derived from the db
            showBook(event)
         })
 
@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
     
     // handleTitleClick
+    // gets a book and displays it in show-panel
     function showBook(event){
         const id = event.target.dataset.bookId
         getOneBook(id)
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </ul>
                 </div>`
                 const button = document.createElement('button')
+                // conditional logic checks to see if 'currentUser' is already present in this book's users
                 if (book.users.some(user => user.id === currentUser)){
                     button.innerText = "UNLIKE"
                 } else {
@@ -100,21 +102,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
        // handleLike
        function handleLike(event){
+           // uses event delegation to detect the origin (target) of a click event
            if(event.target.tagName=="BUTTON"){
             console.log(event.target);
             const id = event.target.dataset.bookId
+            // conditional to perform different updates dependent on the button text
             if(event.target.innerText == 'LIKE'){
+                // get the "current" user
                 getUser(currentUser).then(user => {
+                    // then get the book to update
                     getOneBook(id).then(book => {
+                        // using a spread operator, append the 'current' user to the list of existing users 
                         const body = {
                             users: [...book.users, user]
                         }
+                        // send new users as body for the update, along with id and event needed by showBook()
                         updateLikes(id, body, event)
                     })
                 })
 
             } else {
                 getOneBook(id).then(book => {
+                    // similar to above, but uses filter() to remove 'current' user from array
                     const users = book.users.filter(user => user.id != currentUser)
                     const body = { users: [...users]}
                     updateLikes(id, body, event)
