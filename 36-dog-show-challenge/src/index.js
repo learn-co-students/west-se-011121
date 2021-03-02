@@ -29,28 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
         tbody.prepend(tr)
     }
 
+    // take data from a dog object and fill in the form
     function populateForm(dog){
-        console.log('dog: ', dog);
         form.name.value = dog.name
         form.breed.value = dog.breed
         form.sex.value = dog.sex
         form.dataset.id = dog.id
     }
+    
     // send PATCH fetch with new data
     function editDog(event){
         event.preventDefault()
         
-        console.log('event: ', event.target);
-        // fetch('....dog/:id)\
         const id = event.target.dataset.id
-        console.log('id: ', id);
 
         const newDog = {
             name:  form.name.value,
             breed: form.breed.value,
             sex: form.sex.value
         }
-
+        event.target.reset()
         fetch(`http://localhost:3000/dogs/${id}`, {
             method: 'PATCH',
             headers: {
@@ -68,4 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     getDogs()
+
+     // The lab itself suggests making a new fetch for all the dogs after a successful patch has come through. Personally, I think that's super cost expensive when we already have the one updated dog's information. But, because the lab recommended it, below you will find what that could look like:
+
+        // fetch(`${DOGSURL}/${form.dataset.id}`, configObject)
+        //     .then(res => res.json())
+        //     .then(json => {
+        //         // clear out the table
+        //         table.innerText = ''
+        //         // re-fetch all dogs
+        //         fetchingAllDogs()
+        //     })
+        //     .catch(errors => {
+        //         console.log(errors)
+        //         alert("That didn't work.")
+        //     })
 })
