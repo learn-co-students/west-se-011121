@@ -7,6 +7,10 @@ class Person
   def self.say_something
     puts "I am a class method defined on the #{self} class."
   end
+
+  def name
+    self.name
+  end
 end
 
 Person.say_something # => self will be Person class
