@@ -1,14 +1,42 @@
 import React from 'react'
 import BookCard from './BookCard'
+import books from '../data/data'
+import FormComponent from './FormComponent'
 
-class BookContainer {
+class BookContainer extends React.Component {
+
+    state = {
+        books: [...books],
+        totalRead: 0
+    }
+
+    renderBooks = () => {
+        return this.state.books.map(book => <BookCard
+            key={book.isbn}
+            title={book.title}
+            author={book.author}
+            img={book.image}
+            addToTotalRead={this.addToTotal}
+            />)
+    }
+
+    addToTotal = () => {
+        console.log('increase total')
+        this.setState({...this.state, totalRead: this.state.totalRead + 1})
+    }
+
+    handleAddBook = (book) => {
+        console.log('book: ', book);
+        this.setState({books: [...this.state.books, book]})
+    }
+
     render(){
         return (
             <div>
                 <h1> JavaScript Books </h1>
-                <BookCard title="Eloquent JavaScript" author="Marijn Haverbeke" img="https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX376_BO1,204,203,200_.jpg" />
-                <BookCard title="Learning JavaScript Design Patterns" author="Addy Osmani" img="https://images-na.ssl-images-amazon.com/images/I/917iQZBR91L.jpg" />
-                <BookCard title="Speaking JavaScript" author="Axel Rauschmayer" img="http://speakingjs.com/es5/orm_front_cover.jpg" />
+                <h4>Total Read: {this.state.totalRead}</h4>
+                <FormComponent handleAddBook={this.handleAddBook}/>
+                {this.renderBooks()}
                 
             </div>
         )
