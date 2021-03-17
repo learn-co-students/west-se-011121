@@ -17,12 +17,12 @@ No persistence
   - <PetBrowser />
     - Receives pets [] (the filtered pets)
     - Receives onAdoptPet(id), updates isAdopted to true
-    - <Pet />
-      - Receives pet { name, type, age, weight, gender, isAdopted }
-        - For gender, displays male (`♂`) or female (`♀`) symbol 
-        - For isAdopted: true => disabled button, false => primary button
-      - Receives onAdoptPet(id), updates isAdopted to true
-        - Does not get called if pet already adopted
+      - <Pet />
+        - Receives pet { name, type, age, weight, gender, isAdopted }
+          - For gender, displays male (`♂`) or female (`♀`) symbol 
+          - For isAdopted: true => disabled button, false => primary button
+        - Receives onAdoptPet(id), updates isAdopted to true
+          - Does not get called if pet already adopted
 
 ## Endpoints
 
