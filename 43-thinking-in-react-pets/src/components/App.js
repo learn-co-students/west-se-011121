@@ -14,20 +14,31 @@ class App extends React.Component {
       }
     }
   }
-
+  // callback to change isAdopted in state
   onAdoptPet = (id) => {
     console.log(id)
     const pets = [...this.state.pets]
-    this.setState({pets: pets.map(pet => pet.id !== id ? pet : {...pet, isAdopted: true})})
+    // this.setState({pets: pets.map(pet => pet.id !== id ? pet : {...pet, isAdopted: true})}) // conditional using ternary
+    this.setState({pets: pets.map(pet => {  // same as ternary above, written as if-statement
+      if(pet.id !== id){
+        return pet
+      } else {
+        return {...pet, isAdopted: true}
+      } 
+    })
+    })
   }
-
-  onChangeType = (type) => {
-    // alert(type)
-    this.setState({filters: { type }})
+  // callback to get animal type from <Filters /> and update state on <App />
+  onChangeType = (val) => {
+    this.setState({filters: { type: val }})
   }
+  // using the parameter 'type' instead of 'val' allows use of this ES6 shorthand syntax
 
-  //   '/api/pets'
-  // '/api/pets?type=cat' (dog, micropig)
+  // onChangeType = (type) => {
+  //   this.setState({filters: { type }})  
+  // }
+
+  // callback to use button click on <Filters /> to initiate a new fetch
   onFindPetsClick = () => {
     // alert('clicked')
     let endpoint

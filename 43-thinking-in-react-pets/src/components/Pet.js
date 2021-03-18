@@ -4,7 +4,7 @@ class Pet extends React.Component {
 
   
   render() {
-    // console.log(this.props)
+    // using destructuring assignment to extract properties from a 'pet' object
     const {id, age, gender, name, type, weight, isAdopted} = this.props.pet
   
     return (
@@ -23,6 +23,7 @@ class Pet extends React.Component {
           </div>
         </div>
         <div className="extra content">
+          {/* below is a ternary expression to conditionally render different JSX based on the boolean value 'isAdopted'*/}
           {isAdopted ? <button className="ui disabled button">Already adopted</button>: <button onClick={() => this.props.onAdoptPet(id)} className="ui primary button">Adopt pet</button>}
           
           
