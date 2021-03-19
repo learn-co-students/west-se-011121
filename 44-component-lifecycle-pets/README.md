@@ -31,11 +31,11 @@ We'll continue working with our Pet Adoption app, but we'll build out some new f
 
 ### Fetch the Pets Only Once
 
-Fetch pets only once.
+X Fetch pets only once.
 
-Show all of the pets by default (without needing to click anything).
+X Show all of the pets by default (without needing to click anything).
 
-Modify the app so that the filters change which pets are showing without re-fetching.
+X Modify the app so that the filters change which pets are showing without re-fetching.
 
 ### Randomly Adopt a Pet Every 2 seconds
 Make it look like other users are on the website adopting Pets.

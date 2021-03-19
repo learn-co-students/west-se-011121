@@ -7,7 +7,6 @@ import Cage from './Cage';
 class App extends React.Component {
   constructor() {
     super();
-
     this.state = {
       pets: [],
       filters: {
@@ -18,7 +17,15 @@ class App extends React.Component {
     }
   }
 
+  
   // TODO: SET STATE WITH ONE FETCH
+  componentDidMount(){
+    const domain = '/api/pets';
+    fetch(domain)
+    .then(res => res.json())
+    .then(pets => this.setState({ pets, filteredPets: pets }));
+
+  }
   
 
   onChangeType = (e) => {
@@ -27,22 +34,34 @@ class App extends React.Component {
 
   // TODO: MODIFY TO CHOOSE THE PET TYPE FROM PETS AND UPDATE FILTERED PETS
   onFindPetsClick = () => {
-    const domain = '/api/pets';
     const filterType = this.state.filters.type;
-    const endpoint = filterType === 'all' ? domain : `${domain}?type=${filterType}`;
-
-    fetch(endpoint)
-    .then(res => res.json())
-    .then(pets => this.setState({ pets }));
+    // const endpoint = filterType === 'all' ? domain : `${domain}?type=${filterType}`;
+    let filteredPets
+    if (filterType === 'all') {
+      filteredPets = [...this.state.pets]
+    } else {
+      filteredPets = this.state.pets.filter(pet => pet.type === filterType)
+    }
+    this.setState({ filteredPets })
+    // fetch(endpoint)
+    // .then(res => res.json())
+    // .then(pets => this.setState({ pets }));
     
   };
 
   // TODO: MODIFY TO UPDATE THE FILTERED PET
   onAdoptPet = (id) => {
     // update pet in state to isAdopted: true
-    this.setState({ filteredPets: this.state.filteredPets.map(pet => pet.id === id ? {...pet, isAdopted: true} : pet) });
+    // need to update the same pet in both arrays in state
+    this.setState(prevState => {
+      return { 
+        filteredPets: prevState.filteredPets.map(pet => pet.id === id ? {...pet, isAdopted: true} : pet),
+        pets: prevState.pets.map(pet => pet.id === id ? {...pet, isAdopted: true} : pet)
+    }
+    });
   };
 
+  // HANDLER THAT TOGGLES THE isCaged BOOLEAN IN STATE
   setCaged = () => {
     this.setState({ isCaged: !this.state.isCaged });
   };
@@ -50,7 +69,8 @@ class App extends React.Component {
   render() {
     return <>
       {/* CONDITIONALLY SHOW CAGED COMPONENT */}
-      {this.state.isCaged ? <Cage /> : null}
+      {/* this.state.isCaged ? <Cage /> : null */}
+      {this.state.isCaged && <Cage />}
 
       <div className="ui container">
         <header>
@@ -65,7 +85,7 @@ class App extends React.Component {
               </button>
             </div>
             <div className="twelve wide column">
-              <PetBrowser pets={this.state.pets} onAdoptPet={this.onAdoptPet}  />
+              <PetBrowser pets={this.state.filteredPets} onAdoptPet={this.onAdoptPet}  />
             </div>
           </div>
         </div>
