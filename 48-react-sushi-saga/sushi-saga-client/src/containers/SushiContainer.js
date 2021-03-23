@@ -10,7 +10,7 @@ const SushiContainer = ({sushis, nextFour, eatSushi }) => {
           /* 
              Render Sushi components here!
           */
-         sushis.map(sushi => <Sushi sushi={sushi} eatSushi={eatSushi}/>)
+         sushis.map(sushi => <Sushi key={sushi.id} sushi={sushi} eatSushi={eatSushi}/>)
         }
         <MoreButton nextFour={nextFour}/>
       </div>
