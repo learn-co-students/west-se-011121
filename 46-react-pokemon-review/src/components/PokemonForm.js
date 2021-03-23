@@ -44,6 +44,8 @@ class PokemonForm extends React.Component {
     return (
       <div>
         <h3>Add a Pokemon!</h3>
+        {/* one use of a controlled form could be to let the user preview an image before submitting */}
+        {/* <img src={this.state.frontUrl} /> */}
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths="equal">
             {this.renderInputs()}
