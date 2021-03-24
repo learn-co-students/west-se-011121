@@ -4,7 +4,7 @@ const Sushi = ({sushi, eatSushi}) => {
   return (
     <div className="sushi">
       <div className="plate" 
-           onClick={() => eatSushi(sushi)}>
+           onClick={(e) => eatSushi(e, sushi)}>
         { 
           /* Tell me if this sushi has been eaten! */ 
           sushi.eaten ?
