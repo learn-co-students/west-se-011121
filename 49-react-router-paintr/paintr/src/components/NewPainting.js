@@ -1,4 +1,5 @@
 import React from "react";
+import {withRouter} from 'react-router-dom'
 
 class NewPainting extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class NewPainting extends React.Component {
   };
 
   render() {
+    console.log('location: ', this.props.location)
     return (
       <div className="ui centered card">
         {/* <div>
@@ -72,4 +74,4 @@ class NewPainting extends React.Component {
   }
 }
 
-export default NewPainting;
+export default withRouter(NewPainting);
