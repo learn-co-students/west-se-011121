@@ -10,21 +10,20 @@ class App extends Component {
     error: null,
     post: {},
   };
-  componentDidMount() {}
+
 
   createPost = (e, post) => {
     e.preventDefault();
-    console.log(post);
+  
     axios
       .post(API + "/posts", { post })
       .then((resp) => {
-        console.log(resp.data);
         this.setState({ post: resp.data, error: null });
       })
       .catch((error) =>
         this.setState({ error: error.response.data.errors[0] })
       );
-    //need to make request to create post
+   
   };
 
   render() {
