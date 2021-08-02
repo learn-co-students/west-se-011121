@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": "13"
+      "likes": "14"
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": "10"
+      "likes": "11"
     },
     {
       "id": 3,
@@ -71,6 +71,12 @@
       "image": "dadfsfdafds",
       "likes": 0,
       "id": 12
+    },
+    {
+      "name": "Optimus Prime",
+      "image": "https://cdn.shopify.com/s/files/1/0164/3728/0868/products/811jtmV1BQL_400x.jpg?v=1576033794",
+      "likes": 0,
+      "id": 13
     }
   ]
 }
